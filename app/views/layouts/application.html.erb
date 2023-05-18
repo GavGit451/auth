@@ -11,10 +11,16 @@
 
   <body>
     <p>
-    <% user = User.find_by[{ "id" => session["user_id"]}]%>
-      Hey, <%= user["first_name"])%>
-      <a href="/sessions/new">Login</a>
-      <a href="/users/new">Sign Up</a>
+      <%  %>
+      <% if @current_user != nil %>
+        Hey, <%= @current_user["first_name"] %>
+        |
+        <a href="/logout">Logout</a>
+      <% else %>
+        <a href="/sessions/new">Login</a>
+        |
+        <a href="/users/new">Sign Up</a>
+      <% end %>
     </p>
 
     <p>
